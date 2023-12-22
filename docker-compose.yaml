@@ -1,0 +1,123 @@
+version: "3.8"
+   
+services:
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379"
+  
+  nginx:
+    container_name: nginx
+    restart: always
+    build: ./nginx
+    ports:
+      - 1337:80
+    depends_on:
+      - backend
+      - asgiserver
+
+  backend:
+    build: ./backend
+    command: bash -c "python newsapi/manage.py makemigrations && \
+              python newsapi/manage.py migrate &&\
+              python newsapi/manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./backend/:/usr/src/app/
+    ports:
+      - 8000:8000
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres-db:5432/newsDB
+      - SECRET_API_KEY=c60536572a9e4f0a927246882b8b4584
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres
+      - DATABASE_HOST=postgres-db
+      - DATABASE_NAME=newsDB
+      - DATABASE_PORT=5432
+      - REDIS_URL=redis://redis:6379/0
+    links:
+      - redis
+      - postgres-db
+
+  asgiserver:
+    build: ./backend
+    container_name: asgiserver
+    command:  bash -c "python newsapi/manage.py makemigrations && \
+              python newsapi/manage.py migrate && cd newsapi && daphne newsapi.asgi:application -b 0.0.0.0 -p 9000"
+    volumes:
+      - ./backend/:/usr/src/app/
+    ports:
+      - 9000:9000
+    environment:
+    - DATABASE_URL=postgresql://postgres:postgres@postgres-db:5432/newsDB
+    - SECRET_API_KEY=news_api_key
+    - DATABASE_USER=postgres
+    - DATABASE_PASSWORD=postgres
+    - DATABASE_HOST=postgres-db
+    - DATABASE_NAME=newsDB
+    - DATABASE_PORT=5432
+    - REDIS_URL=redis://redis:6379/0
+    - DJANGO_SETTINGS_MODULE=newsapi.settings
+    links:
+      - redis
+      - postgres-db
+
+  celery:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    command: bash -c "cd newsapi && celery -A newsapi worker -l info"
+    volumes:
+      - ./backend/:/usr/src/app/
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres-db:5432/newsDB
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres
+      - DATABASE_HOST=postgres-db
+      - DATABASE_NAME=newsDB
+      - DATABASE_PORT=5432
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - redis
+      - backend
+
+  celery-beat:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    command: bash -c "cd newsapi && celery -A newsapi beat -l info"
+    volumes:
+      - ./backend/:/usr/src/app/
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres-db:5432/newsDB
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres
+      - DATABASE_HOST=postgres-db
+      - DATABASE_NAME=newsDB
+      - DATABASE_PORT=5432
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - redis
+      - backend
+      - postgres-db
+
+  frontend:
+    container_name: frontend
+    build: 
+      context: ./frontend
+      args:
+      - VUE_APP_TITLE=Docker Application
+      - VUE_APP_API_BACKEND=http:\\localhost:8000
+      - VUE_APP_WEBSOCKET=ws:\\localhost:9000\ws\news\
+    ports:
+      - 8080:80
+  postgres-db:
+    image: postgres:13.5
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: newsDB
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data

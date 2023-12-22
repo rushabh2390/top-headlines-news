@@ -1,0 +1,156 @@
+INFO 2023-12-17 07:30:51,543 autoreload 9 140024690825024 Watching for file changes with StatReloader
+INFO 2023-12-17 07:31:56,951 autoreload 9 140548333098816 Watching for file changes with StatReloader
+INFO 2023-12-17 07:35:19,542 autoreload 9 140296326444864 Watching for file changes with StatReloader
+INFO 2023-12-17 07:43:54,572 autoreload 9 140159684056896 Watching for file changes with StatReloader
+INFO 2023-12-17 07:47:45,783 autoreload 9 140680830052160 Watching for file changes with StatReloader
+INFO 2023-12-17 07:49:55,977 autoreload 9 139638241265472 Watching for file changes with StatReloader
+INFO 2023-12-17 07:54:30,948 autoreload 9 140150512351040 Watching for file changes with StatReloader
+INFO 2023-12-17 08:01:13,760 autoreload 9 140005707364160 Watching for file changes with StatReloader
+INFO 2023-12-17 08:03:56,229 autoreload 9 139773259970368 Watching for file changes with StatReloader
+INFO 2023-12-17 08:06:28,735 autoreload 9 140373191063360 Watching for file changes with StatReloader
+INFO 2023-12-17 08:10:57,796 autoreload 9 140600531322688 Watching for file changes with StatReloader
+INFO 2023-12-17 08:13:42,800 autoreload 9 139764877686592 Watching for file changes with StatReloader
+INFO 2023-12-17 08:46:55,153 autoreload 9 140385189754688 Watching for file changes with StatReloader
+INFO 2023-12-17 08:55:27,896 autoreload 10 140566755063616 Watching for file changes with StatReloader
+INFO 2023-12-17 08:58:35,003 autoreload 9 140346538747712 Watching for file changes with StatReloader
+WARNING 2023-12-17 09:00:38,899 log 9 140346477721344 Not Found: /
+WARNING 2023-12-17 09:00:38,901 basehttp 9 140346477721344 "GET / HTTP/1.1" 404 2215
+WARNING 2023-12-17 09:00:38,983 log 9 140346477721344 Not Found: /favicon.ico
+WARNING 2023-12-17 09:00:38,984 basehttp 9 140346477721344 "GET /favicon.ico HTTP/1.1" 404 2266
+INFO 2023-12-17 14:36:56,302 autoreload 9 140241820800832 Watching for file changes with StatReloader
+ERROR 2023-12-17 14:40:42,557 log 9 140241688065792 Internal Server Error: /ws/news/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/asgiref/sync.py", line 277, in __call__
+    return call_result.result()
+  File "/usr/local/lib/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/local/lib/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.9/site-packages/asgiref/sync.py", line 353, in main_wrap
+    result = await self.awaitable(*args, **kwargs)
+TypeError: app() missing 2 required positional arguments: 'receive' and 'send'
+ERROR 2023-12-17 14:40:42,569 basehttp 9 140241688065792 "GET /ws/news/ HTTP/1.1" 500 62419
+ERROR 2023-12-17 14:41:08,132 log 9 140241679673088 Internal Server Error: /ws/news/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/asgiref/sync.py", line 277, in __call__
+    return call_result.result()
+  File "/usr/local/lib/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/local/lib/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.9/site-packages/asgiref/sync.py", line 353, in main_wrap
+    result = await self.awaitable(*args, **kwargs)
+TypeError: app() missing 2 required positional arguments: 'receive' and 'send'
+ERROR 2023-12-17 14:41:08,133 basehttp 9 140241679673088 "GET /ws/news/ HTTP/1.1" 500 62419
+INFO 2023-12-17 14:52:07,073 autoreload 9 140599134398272 Watching for file changes with StatReloader
+ERROR 2023-12-17 14:52:10,525 log 9 140599073371904 Internal Server Error: /ws/news/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/asgiref/sync.py", line 277, in __call__
+    return call_result.result()
+  File "/usr/local/lib/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/local/lib/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.9/site-packages/asgiref/sync.py", line 353, in main_wrap
+    result = await self.awaitable(*args, **kwargs)
+TypeError: app() missing 2 required positional arguments: 'receive' and 'send'
+ERROR 2023-12-17 14:52:10,526 basehttp 9 140599073371904 "GET /ws/news/ HTTP/1.1" 500 62419
+INFO 2023-12-17 20:28:31,100 autoreload 11708 6952 Watching for file changes with StatReloader
+INFO 2023-12-17 15:02:03,017 autoreload 9 139638140983104 Watching for file changes with StatReloader
+INFO 2023-12-17 15:03:10,737 autoreload 9 139941582133056 Watching for file changes with StatReloader
+INFO 2023-12-17 16:17:24,266 autoreload 9 139930026456896 Watching for file changes with StatReloader
+INFO 2023-12-17 16:19:13,065 autoreload 9 139710180493120 Watching for file changes with StatReloader
+INFO 2023-12-17 16:20:46,484 autoreload 9 140262965638976 Watching for file changes with StatReloader
+INFO 2023-12-17 16:25:12,676 autoreload 9 139929475893056 Watching for file changes with StatReloader
+INFO 2023-12-17 16:30:33,106 autoreload 9 140043512850240 Watching for file changes with StatReloader
+ERROR 2023-12-17 16:30:36,951 log 9 140043381372672 Internal Server Error: /ws/news/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/asgiref/sync.py", line 277, in __call__
+    return call_result.result()
+  File "/usr/local/lib/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/local/lib/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.9/site-packages/asgiref/sync.py", line 353, in main_wrap
+    result = await self.awaitable(*args, **kwargs)
+TypeError: app() missing 2 required positional arguments: 'receive' and 'send'
+ERROR 2023-12-17 16:30:37,020 basehttp 9 140043381372672 "GET /ws/news/ HTTP/1.1" 500 62432
+INFO 2023-12-17 16:39:38,216 autoreload 9 139975376553792 Watching for file changes with StatReloader
+ERROR 2023-12-17 16:39:41,051 log 9 139975315654400 Internal Server Error: /ws/news/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/asgiref/sync.py", line 277, in __call__
+    return call_result.result()
+  File "/usr/local/lib/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/local/lib/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.9/site-packages/asgiref/sync.py", line 353, in main_wrap
+    result = await self.awaitable(*args, **kwargs)
+TypeError: app() missing 2 required positional arguments: 'receive' and 'send'
+ERROR 2023-12-17 16:39:41,052 basehttp 9 139975315654400 "GET /ws/news/ HTTP/1.1" 500 62432
+ERROR 2023-12-17 16:39:42,294 log 9 139975306999552 Internal Server Error: /ws/news/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/asgiref/sync.py", line 277, in __call__
+    return call_result.result()
+  File "/usr/local/lib/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/local/lib/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.9/site-packages/asgiref/sync.py", line 353, in main_wrap
+    result = await self.awaitable(*args, **kwargs)
+TypeError: app() missing 2 required positional arguments: 'receive' and 'send'
+ERROR 2023-12-17 16:39:42,295 basehttp 9 139975306999552 "GET /ws/news/ HTTP/1.1" 500 62432
+INFO 2023-12-18 16:11:39,653 autoreload 9 140020656674624 Watching for file changes with StatReloader
+INFO 2023-12-18 16:18:51,098 autoreload 9 140668032931648 Watching for file changes with StatReloader
+INFO 2023-12-19 16:00:16,129 autoreload 9 139667915732800 Watching for file changes with StatReloader
+INFO 2023-12-19 16:12:27,251 autoreload 9 140533872944960 Watching for file changes with StatReloader
+INFO 2023-12-19 16:18:27,770 autoreload 9 140476821473088 Watching for file changes with StatReloader
+INFO 2023-12-19 16:44:26,115 autoreload 9 140710474868544 Watching for file changes with StatReloader
+INFO 2023-12-19 16:47:39,182 autoreload 9 139850166925120 Watching for file changes with StatReloader
+INFO 2023-12-19 16:55:51,937 autoreload 9 140214243731264 Watching for file changes with StatReloader
+INFO 2023-12-19 16:57:00,710 autoreload 9 140478640998208 Watching for file changes with StatReloader
+INFO 2023-12-19 17:00:11,428 autoreload 9 140509473191744 Watching for file changes with StatReloader
+INFO 2023-12-19 17:02:32,733 autoreload 9 140025913321280 Watching for file changes with StatReloader
+INFO 2023-12-19 17:07:13,456 autoreload 9 140546375403328 Watching for file changes with StatReloader
+INFO 2023-12-19 17:09:53,800 autoreload 9 140657817990976 Watching for file changes with StatReloader
+INFO 2023-12-19 17:15:42,405 autoreload 9 140497604634432 Watching for file changes with StatReloader
+INFO 2023-12-19 17:20:01,027 autoreload 9 139999071143744 Watching for file changes with StatReloader
+INFO 2023-12-19 17:21:41,270 autoreload 9 139700344624960 Watching for file changes with StatReloader
+INFO 2023-12-19 17:22:13,012 autoreload 9 139778324260672 Watching for file changes with StatReloader
+INFO 2023-12-20 16:59:42,122 autoreload 9 140051050932032 Watching for file changes with StatReloader
+INFO 2023-12-20 17:05:32,433 autoreload 9 140474036242240 Watching for file changes with StatReloader
+INFO 2023-12-20 17:06:30,916 autoreload 9 140474036242240 /usr/src/app/newsapi/newsapi/settings.py changed, reloading.
+INFO 2023-12-20 17:06:35,273 autoreload 11 139687632713536 Watching for file changes with StatReloader
+INFO 2023-12-20 17:09:14,513 autoreload 9 140152092821312 Watching for file changes with StatReloader
+INFO 2023-12-20 17:13:40,392 autoreload 9 140154751489856 Watching for file changes with StatReloader
+INFO 2023-12-20 17:14:06,368 autoreload 9 140154751489856 /usr/src/app/newsapi/newsapi/settings.py changed, reloading.
+INFO 2023-12-20 17:14:08,631 autoreload 11 140391696783168 Watching for file changes with StatReloader
+INFO 2023-12-20 17:17:16,068 autoreload 9 140567490164544 Watching for file changes with StatReloader
+INFO 2023-12-20 17:19:19,518 autoreload 9 140336839427904 Watching for file changes with StatReloader
+INFO 2023-12-20 17:20:35,645 autoreload 10 139651893401408 Watching for file changes with StatReloader
+INFO 2023-12-20 17:22:57,418 autoreload 10 140145209820992 Watching for file changes with StatReloader
+INFO 2023-12-22 17:15:27,716 autoreload 9 139663535183680 Watching for file changes with StatReloader
