@@ -28,7 +28,7 @@ services:
       - 8000:8000
     environment:
       - DATABASE_URL=postgresql://postgres:postgres@postgres-db:5432/newsDB
-      - SECRET_API_KEY=c60536572a9e4f0a927246882b8b4584
+      - SECRET_API_KEY=newsapikey
       - DATABASE_USER=postgres
       - DATABASE_PASSWORD=postgres
       - DATABASE_HOST=postgres-db
